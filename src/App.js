@@ -4,7 +4,6 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 
 import Login from "./components/Login";
-import Register from "./components/Register";
 import Newregister from "./components/Newregister";
 import Navbar from "./components/Navbar";
 import Home from "./components/views/Home";
@@ -26,7 +25,6 @@ function App() {
    <BrowserRouter>
    <Routes>
    <Route path="/" element={<Login/>} />
-   <Route path="/register" element={<Register/>} />
    <Route path="/newregister" element={<Newregister/>} />
    <Route path="/navbar" element={<Navbar/>} />
    <Route path="/home" element={<Home/>} />
