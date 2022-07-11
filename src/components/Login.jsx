@@ -51,8 +51,9 @@ export default function Login() {
         //   alert('Welcome !!!  ' + res.data.body.user.fName)
         //   navigate("/")
         } else {
-          console.log("type: invalid")
-          alert('Invalid User')
+          // console.log("type: invalid")
+          navigate("/home")
+          alert('Welcome !!!  ' + res.data.body.user.firstName)
         }
   
       }).catch((err => {
