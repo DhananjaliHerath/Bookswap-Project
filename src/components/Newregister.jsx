@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function Newregister() {
+    const [mrCheck,setMrCheck]= useState(false);
+    const [mrsCheck,setMrsCheck]= useState(false);
     const [firstName, setFName] = useState('');
     const [lastName, setLName] = useState('');
     const [userName, setUserName] = useState('');
@@ -93,7 +95,20 @@ export default function Newregister() {
       }
       console.log(errors)
     
-  
+  const handleCheckmr=()=>{
+    setMrCheck(!mrCheck);
+    
+  }
+  const check=()=>{
+    var all = document.getElementById("all"),
+        group = document.getElementById("servers");
+    if(all.checked == true){
+        group.checked = false;
+    } else if(group.checked == true){
+        all.checked = false;
+    }
+    
+  }
 
   return (
      
@@ -110,8 +125,13 @@ export default function Newregister() {
         <h2 className='text-4xl font-bold text-center px-1 py-1'>Create an Account</h2>
 
         <div className='flex justify-between text-gray-600 py-2 '>
-       <p className='flex items-center relative'><input className='mr-2' type="checkbox" />MR</p>
-       <p className='flex items-center relative'><input className='mr-1' type="checkbox" />MRS</p>
+       {/* <p className='flex items-center relative'><input className='mr-2' type="checkbox" id="gender" checked={mrCheck} onChange ={handleCheckmrs}/>MR</p>
+       <p>{mrCheck ? "" : "unchecked" }</p>
+       <p className='flex items-center relative'><input className='mr-1' type="checkbox" id="gender" checked={mrsCheck} onChange ={handleCheckmrs}/>MRS</p>
+       <p>{mrsCheck ? "" : "unchecked" }</p> */}
+       <input type="checkbox" id="all" value="all" name="all" onChange="check()"/>ALL <br/>
+    <input type="checkbox" id="servers" value="xampp" name="server[]" onChange="check()" />XAMPP <br/>
+    <input type="checkbox" id="servers" value="xampp" name="server[]" onChange="check()" />XAMPP <br/>
        
        </div>
 
@@ -182,13 +202,14 @@ export default function Newregister() {
 
 
         <div className='flex justify-between text-gray-600 '>
-       <p className='flex items-center relative text-sm '><input className='mr-2' type="checkbox" name='checks' {...register("chooseCb",{required:'This is required'} )}  />I agree to the terms and conditions and the privacy policy<br></br>
-      {errors.chooseCb?.message} </p>
+       <p className='flex items-center relative text-sm '><input className='mr-2' type="checkbox" name='checks' {...register("chooseCb",{required:'This is required'} )}  />I agree to the terms and conditions and the privacy policy</p>
+       
         
 
        
 
       </div>
+      <div><p className='text-red-400'> {errors.chooseCb?.message} </p></div>
 
 
         <button  type='submit' className='w-full py-2 mt-6 bg-amber-400 hover:bg-slate-500 relative text-black hover:text-white '>Sign up</button>
