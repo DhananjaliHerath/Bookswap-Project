@@ -79,36 +79,58 @@ export default function Bookdatails1() {
 
                   </div>
                   <div class="justify-between mt-4">
-                    <span class="text-sm text-black">Author: </span>
+                    <span class="text-sm text-black">Book Id: </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">J.K.Rowlling</a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Pages: </span>
+                    <span class="text-sm text-black">Book Owner: </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">223</a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Type: </span>
+                    <span class="text-sm text-black">currently with: </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Used</a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Owner: </span>
+                    <span class="text-sm text-black">Description: </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Dhananjali</a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">ISBN: </span>
+                    <span class="text-sm text-black">Genre: </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
                   </div>
+                  <div class="justify-between mt-1">
+                    <span class="text-sm text-black">Isbn: </span>
+
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                  </div>
+                  <div class="justify-between mt-1">
+                    <span class="text-sm text-black">Owner ID: </span>
+
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                  </div>
+                  <div class="justify-between mt-1">
+                    <span class="text-sm text-black">Status: </span>
+
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                  </div>
+
+                  <div class="justify-between mt-1">
+                    <span class="text-sm text-black">Title: </span>
+
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                  </div>
+
 
                   <details class="relative mt-4 group">
                     <summary class="block">
                       <div>
                         <div class="prose max-w-none ">
-                          <h3 class="text-xl font-bold">Description</h3>
+                          <h3 class="text-sm text-black">Description</h3>
                           <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa veniam dicta beatae eos ex error culpa delectus rem tenetur, architecto quam nesciunt, dolor veritatis nisi minus inventore, rerum at recusandae?
                           </p>
