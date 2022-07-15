@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from '../Navbar'
+import Addbooks from './Addbooks';
 
 export default function Profile() {
+    const [showModal, setShowModal] = React.useState(false);
   const userobj=localStorage.getItem('user');
   const user=JSON.parse(userobj);
   console.log("user"+user.userId)
@@ -9,11 +11,11 @@ export default function Profile() {
   return (
     <div>
         <Navbar/>
+        <Addbooks/>
         <div>
       
-     
 
-       <div  class=" h-40 w-40 mb-4  mr-4 mt-10 item-center justify-center mx-96" >
+       <div  class=" h-40 w-40 mb-4  mr-4 mt-10 item-center justify-center mx-96 relative " >
                         <img src="https://www.participate.nyc.gov/assets/decidim/default-avatar-43686fd5db4beed0141662a012321bbccd154ee1d9188b0d1f41e37b710af3cb.svg" alt="man avatar" class="h-full w-full rounded-full overflow-hidden shadow justify-center items-center mx-72" />
                     </div> 
     
@@ -58,10 +60,16 @@ export default function Profile() {
                                 <div class="px-4 py-2 font-semibold">Province</div>
                                 <div class="px-4 py-2">{user.address.province}</div>
                             </div>
+                            
+                            
+
                         </div>
+                        
                     </div>
-                  
+                    
+                    
                 </div>
+            
        </div>
        
  
