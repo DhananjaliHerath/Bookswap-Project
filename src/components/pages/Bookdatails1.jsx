@@ -7,6 +7,8 @@ import RingLoader from "react-spinners/RingLoader";
 export default function Bookdatails1() {
   const [loading,setLoading]=useState(false);
 
+
+
   useEffect(()=>{
     setLoading(true);
     setTimeout(()=>{
@@ -81,48 +83,48 @@ export default function Bookdatails1() {
                   <div class="justify-between mt-4">
                     <span class="text-sm text-black">Book Id: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">J.K.Rowlling</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Book Owner: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">223</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">currently with: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Used</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Description: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Dhananjali</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Genre: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Isbn: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Owner ID: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Status: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
 
                   <div class="justify-between mt-1">
                     <span class="text-sm text-black">Title: </span>
 
-                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">9780747532743</a>
+                    <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
 
 
@@ -132,7 +134,7 @@ export default function Bookdatails1() {
                         <div class="prose max-w-none ">
                           <h3 class="text-sm text-black">Description</h3>
                           <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa veniam dicta beatae eos ex error culpa delectus rem tenetur, architecto quam nesciunt, dolor veritatis nisi minus inventore, rerum at recusandae?
+                      hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
                           </p>
                         </div>
 

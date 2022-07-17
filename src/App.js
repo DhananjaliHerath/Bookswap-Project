@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Bookdatails1 from "./components/pages/Bookdatails1";
 import Allbooks from "./components/pages/Allbooks";
 import Profile from "./components/pages/Profile";
+import Addbooks from "./components/pages/Addbooks";
 import Business from "./components/views/Business";
 import ChildrenBooks from "./components/views/ChildrenBooks";
 import CookBooks from "./components/views/CookBooks";
@@ -43,6 +44,7 @@ function App() {
    <Route path="/allbooks" element={<Allbooks/>} />
    <Route path="/profile" element={<Profile/>} />
    <Route path="/allusers" element={<Allusers/>} />
+   <Route path="/addbooks" element={<Addbooks/>} />
    </Routes>
    
    </BrowserRouter>

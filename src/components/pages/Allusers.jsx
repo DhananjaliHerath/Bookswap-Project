@@ -10,6 +10,8 @@ export default function Allusers() {
   const userObj1 = localStorage.getItem('user1')
   const user1 = JSON.parse(userObj1);
   const navigate = useNavigate();
+
+
 //   const back = (e) => {
 //     if (user1.userType == 'admin') {
 //       console.log("type: Admin")
@@ -24,6 +26,7 @@ export default function Allusers() {
 //     }
 //   }
   return (
+    
     <div className='grid grid-cols-1  h-screen w-full'>
       
 
@@ -33,7 +36,7 @@ export default function Allusers() {
         <main className="profile-page">
 
           <section className="relative py-16 bg-slate-100 top-48">
-            <div className="container mx-auto px-4 w-2/3">
+            <div className="container mx-auto px-4 w-3/4">
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
                 <div className="px-6">
                   <div className="flex flex-wrap justify-center">
@@ -64,7 +67,7 @@ export default function Allusers() {
                         <table class="min-w-full">
                           <thead class="bg-white border-b">
                           </thead>
-                          <tbody maxWidth="150px">
+                          <tbody maxWidth="300px">
                             <AllusersList />
 
 
