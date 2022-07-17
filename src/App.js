@@ -18,6 +18,7 @@ import History from "./components/views/History";
 import Literature from "./components/views/Literature";
 import Romance from "./components/views/Romance";
 import Fantacy from "./components/views/Fantacy";
+import Allusers from "./components/pages/Allusers";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
    <Route path="/fantacy" element={<Fantacy/>} />
    <Route path="/allbooks" element={<Allbooks/>} />
    <Route path="/profile" element={<Profile/>} />
+   <Route path="/allusers" element={<Allusers/>} />
    </Routes>
    
    </BrowserRouter>
