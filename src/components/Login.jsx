@@ -5,9 +5,10 @@ import {FaFacebookSquare} from "react-icons/fa"
 import LoginImg from "../assets/login1.jpg"
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
 import { useForm } from 'react-hook-form';
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Login() {
@@ -21,6 +22,7 @@ export default function Login() {
         }
 
     });
+    const notify = () => toast('Login Successfully!  ');
 
     const navigate = useNavigate();
 
@@ -43,21 +45,21 @@ export default function Login() {
           console.log("type: Admin")
           console.log(res.data.body)
           console.log(res.data.body.user.firstName)
-          alert('Welcome !!!  ' + res.data.body.user.firstName)
+          // toast('Welcome !!!  ' + res.data.body.user.firstName)
           navigate("/home")
         
         // } else if (res.data.body.user.type == 'C') {
         //   console.log("type: customer")
-        //   alert('Welcome !!!  ' + res.data.body.user.fName)
+        //  toast('Welcome !!!  ' + res.data.body.user.fName)
         //   navigate("/")
         } else {
           // console.log("type: invalid")
           navigate("/home")
-          alert('Welcome !!!  ' + res.data.body.user.firstName)
+          // toast('Welcome !!!  ' + res.data.body.user.firstName)
         }
   
       }).catch((err => {
-        alert('Invalid ! Please Check Your Email or Password ' + err.name);
+        toast('Invalid ! Please Check Your Email or Password ' + err.name);
       }));
     }
   
@@ -90,8 +92,8 @@ export default function Login() {
 
             {/* <Link to={"/home"}> */}
             
-            <button type='submit' className='w-full py-3 mt-7 bg-amber-400 hover:bg-slate-500 relative text-black hover:text-white' >Sign In</button>
-         
+            <button type='submit' className='w-full py-3 mt-7 bg-amber-400 hover:bg-slate-500 relative text-black hover:text-white'onClick={notify} >Sign In</button>
+            <ToastContainer />
             {/* </Link>   */}
 
 

@@ -99,14 +99,8 @@ export default function Newregister() {
     setMrCheck(!mrCheck);
     
   }
-  const check=()=>{
-    var all = document.getElementById("all"),
-        group = document.getElementById("servers");
-    if(all.checked == true){
-        group.checked = false;
-    } else if(group.checked == true){
-        all.checked = false;
-    }
+  const handleCheckmrs=()=>{
+    setMrsCheck(!mrsCheck);
     
   }
 
@@ -125,13 +119,10 @@ export default function Newregister() {
         <h2 className='text-4xl font-bold text-center px-1 py-1'>Create an Account</h2>
 
         <div className='flex justify-between text-gray-600 py-2 '>
-       {/* <p className='flex items-center relative'><input className='mr-2' type="checkbox" id="gender" checked={mrCheck} onChange ={handleCheckmrs}/>MR</p>
+       <p className='flex items-center relative'><input className='mr-2' type="checkbox" id="gender" checked={mrCheck} onChange ={handleCheckmr}/>MR</p>
        <p>{mrCheck ? "" : "unchecked" }</p>
        <p className='flex items-center relative'><input className='mr-1' type="checkbox" id="gender" checked={mrsCheck} onChange ={handleCheckmrs}/>MRS</p>
-       <p>{mrsCheck ? "" : "unchecked" }</p> */}
-       <input type="checkbox" id="all" value="all" name="all" onChange="check()"/>ALL <br/>
-    <input type="checkbox" id="servers" value="xampp" name="server[]" onChange="check()" />XAMPP <br/>
-    <input type="checkbox" id="servers" value="xampp" name="server[]" onChange="check()" />XAMPP <br/>
+       <p>{mrsCheck ? "" : "unchecked" }</p>
        
        </div>
 
