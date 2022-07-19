@@ -80,6 +80,10 @@ const AllusersList = () => {
     const AllusersList = JSON.parse(usersObj);
     console.log(AllusersList)
 
+    const SingleusersObj = localStorage.getItem('Singleuser')
+    const SingleuserList = JSON.parse(SingleusersObj);
+    console.log(SingleuserList)
+
     return (
         <>
         <tbody maxWidth="150px">
