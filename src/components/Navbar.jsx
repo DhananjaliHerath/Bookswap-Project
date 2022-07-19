@@ -5,11 +5,16 @@ import Allbookslist from './pages/Allbookslist';
 
 export default function Navbar(props) {
     const [title, settitle] = useState('');
+    // const [genre, setgenre] = useState('');
     var Jwt = localStorage.getItem("jwt")
     const searchHandle = (e) => {
         e.preventDefault();
         props.onSubmit(title)
     };
+    // const genreHandle = (e) => {
+    //     e.preventDefault();
+    //     props.onSubmit(genre)
+    // };
     // console.log(title)
     return (
         <div>

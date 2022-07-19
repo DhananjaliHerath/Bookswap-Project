@@ -20,9 +20,9 @@ const AllusersList = () => {
     //             console.log(res)
 
     //         });
-    const handleClick=(userId)=>{
+    const handleClick=(userID)=>{
         setShowModal(true)
-        DeleteUser(userId)
+        DeleteUser(userID)
     }
     const DeleteUser = (userId) => {
         // const UserID = props.userID
@@ -51,42 +51,6 @@ const AllusersList = () => {
             // localStorage.setItem("UserList", JSON.stringify(users))
         })
     }
-
-
-    const handleClickView=(userId)=>{
-        setShowModal1(true)
-        ViewUser(userId)
-    }
-    const ViewUser = (userId) => {
-        // const UserID = props.userID
-        console.log(userId)
-        axios({
-            method: "get",
-            url: "http://18.130.213.30:8080/users/" + userId,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                "Authorization": `Bearer ` + jwt
-            }, data: null,
-            // data: {
-            //     uFName: uFName,
-            //     uLName: uLName,
-            //     address: address,
-            //     userEmail: userEmail,
-            //     password: password,
-            //     userType: userType
-            // },
-            // withCredentials: true,
-            mode: "cors",
-        }).then((res) => {
-            console.log("response", res)
-            // var users = res.data;
-            // localStorage.setItem("UserList", JSON.stringify(users))
-        })
-    }
-
-
-
     axios({
         method: "get",
         url: "http://18.130.213.30:8080/users/",
@@ -115,6 +79,10 @@ const AllusersList = () => {
     const usersObj = localStorage.getItem('AllusersList')
     const AllusersList = JSON.parse(usersObj);
     console.log(AllusersList)
+
+    const SingleusersObj = localStorage.getItem('Singleuser')
+    const SingleuserList = JSON.parse(SingleusersObj);
+    console.log(SingleuserList)
 
     return (
         <>
@@ -157,14 +125,14 @@ const AllusersList = () => {
                     </td > */}
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap ">
                     {/* <button type="button"  onClick={()=>DeleteUser()}> */}
-                    <button type="button" onClick={() => setShowModal(true)} onClickCapture={()=>handleClick(blog.userId)}>
+                    <button type="button" onClick={() => handleClick(blog.userId)}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                             </svg>
                         </button>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap ">
-                    <button type="button" onClick={() => setShowModal1(true)} onClickCapture={()=>handleClickView(blog.userId)}>
+                    <button type="button" onClick={() => setShowModal1(true)}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

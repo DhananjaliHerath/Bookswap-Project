@@ -20,6 +20,7 @@ import Literature from "./components/views/Literature";
 import Romance from "./components/views/Romance";
 import Fantacy from "./components/views/Fantacy";
 import Allusers from "./components/pages/Allusers";
+import ContactUs from "./components/ContactUs";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
    <Route path="/profile" element={<Profile/>} />
    <Route path="/allusers" element={<Allusers/>} />
    <Route path="/addbooks" element={<Addbooks/>} />
+   <Route path="/contact" element={<ContactUs/>} />
    </Routes>
    
    </BrowserRouter>

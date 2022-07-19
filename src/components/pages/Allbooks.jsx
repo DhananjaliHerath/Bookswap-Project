@@ -11,12 +11,18 @@ import RingLoader from "react-spinners/RingLoader";
 export default function Allbooks() {
   var Jwt = localStorage.getItem("jwt")
   const[titile, setTitile] = useState('');
+  const[genre, setGenre] = useState('');
   const getData = (data) =>{
     console.log("from parent: " + data)
-    setTitile(data);
-
+    setGenre(data);
   }
-  const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?title=', Jwt,titile);
+  // if(titile==null & genre!=null){
+  //   const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?genre=', Jwt,genre);
+  // }else if(titile!=null & genre==null){
+    // const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?titile=', Jwt,titile);
+  // }
+  const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?titile=', Jwt,titile);
+  
   console.log("data " + data)
   console.log("pending " + isPending)
   console.log("error " + error)
