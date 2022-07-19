@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-const useFetch = (url, jwt,title) => {
-    const [data, setData] = useState([]);
+const useFetch = (url, jwt,inputw) => {
+    const [data, setData] = useState();
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
     // console.log(url)
     // console.log(jwt)
-    console.log("title from fetch: "+title)
+    console.log("inputw from fetch: "+inputw)
 
     useEffect(() => {
         // console.log('hi')
@@ -14,7 +14,7 @@ const useFetch = (url, jwt,title) => {
         // setTimeout(() => {
         axios({
             method: "get",
-            url: url + title,
+            url: url + inputw,
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET,PUT,POST,PATCH,OPTIONS",
@@ -45,7 +45,7 @@ const useFetch = (url, jwt,title) => {
         // setData(localStorage.getItem('data'));
         // }, 2000);
         // return () => abortCont.abort;
-    },[title]);
+    },[inputw]);
     // console.log(data)
     return { data, isPending, error }
 }
