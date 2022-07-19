@@ -10,22 +10,36 @@ import RingLoader from "react-spinners/RingLoader";
 
 export default function Allbooks() {
   var Jwt = localStorage.getItem("jwt")
-  const[titile, setTitile] = useState('');
-  const[genre, setGenre] = useState('');
+  const[titile, setTitile] = useState(null);
+  const[genre, setGenre] = useState(null);
+  var param = '';
+  var inputw = '';
   const getData = (data) =>{
     console.log("from parent: " + data)
+    setTitile(data);
+  }
+  const getFilterGData = (data) =>{
+    console.log("from G parent: " + data)
     setGenre(data);
   }
-  // if(titile==null & genre!=null){
-  //   const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?genre=', Jwt,genre);
-  // }else if(titile!=null & genre==null){
-    // const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?titile=', Jwt,titile);
-  // }
-  const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?titile=', Jwt,titile);
+  // console.log('test titile' + titile)
+  // console.log('test genre' + genre)
   
-  console.log("data " + data)
-  console.log("pending " + isPending)
-  console.log("error " + error)
+  if(titile=='' & genre!=null){
+    param = 'genre';
+    inputw = genre
+    // const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?genre=', Jwt,genre);
+  }
+  else if(titile!=null & genre==null){
+    param = 'title';
+    inputw = titile
+  //   const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?titile=', Jwt,titile);
+  }
+  const { data, isPending, error} = useFetch('http://18.130.213.30:8080/books/?'+param+'=', Jwt,inputw);
+  
+  // console.log("data " + data)
+  // console.log("pending " + isPending)
+  // console.log("error " + error)
   // useEffect(() => {
   //   console.log('book lisr')
 
@@ -35,7 +49,7 @@ export default function Allbooks() {
   return (
 
     <div>
-      <Navbar onSubmit={getData} />
+      <Navbar onSubmit={getData} onChange={getFilterGData} />
 
       <section class="container p-6 mx-auto bg-white dark:bg-gray-800">
         <h2 class="text-xl font-medium text-gray-800 capitalize dark:text-white md:text-2xl justify-center items-center text-center">All Books</h2>
