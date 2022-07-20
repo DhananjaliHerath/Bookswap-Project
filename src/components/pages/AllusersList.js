@@ -8,6 +8,8 @@ const AllusersList = () => {
     var jwt = localStorage.getItem("jwt")
     const [showModal, setShowModal] = useState(false);
     const [showModal1, setShowModal1] = useState(false);
+   
+
     // console.log(jwt)
     // var tansactions = '';
 
@@ -80,8 +82,8 @@ const AllusersList = () => {
             mode: "cors",
         }).then((res) => {
             console.log("response", res)
-            // var users = res.data;
-            // localStorage.setItem("UserList", JSON.stringify(users))
+            var users = res.data.body;
+            localStorage.setItem("Singleuser", JSON.stringify(users))
         })
     }
 
@@ -115,6 +117,13 @@ const AllusersList = () => {
     const usersObj = localStorage.getItem('AllusersList')
     const AllusersList = JSON.parse(usersObj);
     console.log(AllusersList)
+
+    const SingleusersObj = localStorage.getItem('Singleuser')
+    const SingleuserList = JSON.parse(SingleusersObj);
+    console.log(SingleuserList)
+
+
+  
 
     return (
         <>
@@ -291,43 +300,43 @@ const AllusersList = () => {
                        <div class="grid md:grid-cols-2 text-sm items-center justify-center mt-20">
                            <div class="grid grid-cols-2 " >
                                <div class="px-4 py-2 font-semibold">First Name</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">{SingleuserList.firstName}</div>
                            </div>
                            <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Last Name</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">{SingleuserList.lastName}</div>
                            </div>
                            <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Title</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">Mr</div>
                            </div>
                            <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Contact No.</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">{SingleuserList.contactNo}</div>
                            </div>
-                           <div class="grid grid-cols-2">
+                           {/* <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Current Address</div>
-                               <div class="px-4 py-2">hi </div>
-                               </div>
+                               <div class="px-4 py-2">{SingleuserList.addressLine1} {SingleuserList.addressLine2} </div>
+                               </div> */}
                            <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Password</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">{SingleuserList.password}</div>
                            </div>
                            <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Email.</div>
                                <div class="px-4 py-2">
-                                   <a class="text-blue-800" href="mailto:{user.userName}">hi</a>
+                                   <a class="text-blue-800" href="mailto:{user.userName}">{SingleuserList.userName}</a>
                                </div>
                            </div>
-                           <div class="grid grid-cols-2">
+                           {/* <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">City</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">{SingleuserList.city}</div>
                            </div>
                            <div class="grid grid-cols-2">
                                <div class="px-4 py-2 font-semibold">Province</div>
-                               <div class="px-4 py-2">hi</div>
+                               <div class="px-4 py-2">{SingleuserList.province}</div>
                            </div>
-                           
+                            */}
                            
 
                        </div>

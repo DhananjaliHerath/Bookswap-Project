@@ -3,9 +3,46 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import { useState, useEffect} from "react";
 import RingLoader from "react-spinners/RingLoader";
+import axios from "axios";
+import { useParams } from 'react-router-dom';
 
-export default function Bookdatails1() {
+
+export default function Bookdatails1(bookID) {
+  const {id}=useParams();
+  var jwt = localStorage.getItem("jwt")
   const [loading,setLoading]=useState(false);
+  console.log("id: " +id)
+  
+  // const Viewbook = (bookID) => {
+    // const UserID = props.userID
+    console.log(bookID)
+    axios({
+        method: "get",
+        url: "http://18.130.213.30:8080/books/" + id,
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+            "Authorization": `Bearer ` + jwt
+        }, data: null,
+        // data: {
+        //     uFName: uFName,
+        //     uLName: uLName,
+        //     address: address,
+        //     userEmail: userEmail,
+        //     password: password,
+        //     userType: userType
+        // },
+        // withCredentials: true,
+        mode: "cors",
+    }).then((res) => {
+        console.log("response", res)
+        var singlebooks = res.data.body;
+        localStorage.setItem("singlebooks", JSON.stringify(singlebooks))
+    })
+// }
+    const SinglebooksObj = localStorage.getItem('Singlebooks')
+    const SinglebooksList = JSON.parse(SinglebooksObj);
+    console.log(SinglebooksList)
 
 
 
@@ -81,48 +118,48 @@ export default function Bookdatails1() {
 
                   </div>
                   <div class="justify-between mt-4">
-                    <span class="text-sm text-black">Book Id: </span>
+                    <span class="text-sm text-black">Book Id: 1</span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Book Owner: </span>
+                    <span class="text-sm text-black">Book Owner: Jonathan Corera</span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">currently with: </span>
+                    <span class="text-sm text-black">currently with: 50 </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Description: </span>
+                    <span class="text-sm text-black">Description: visuding world</span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Genre: </span>
+                    <span class="text-sm text-black">Genre: dananjalee</span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Isbn: </span>
+                    <span class="text-sm text-black">Isbn: 0747532699</span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Owner ID: </span>
+                    <span class="text-sm text-black">Owner ID: 1</span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Status: </span>
+                    <span class="text-sm text-black">Status: Available </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>
 
                   <div class="justify-between mt-1">
-                    <span class="text-sm text-black">Title: </span>
+                    <span class="text-sm text-black">Title: Harry Potter and the Philosopher's Stone </span>
 
                     <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"></a>
                   </div>

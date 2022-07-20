@@ -22,6 +22,7 @@ import Fantacy from "./components/views/Fantacy";
 import Allusers from "./components/pages/Allusers";
 
 
+
 function App() {
 
   return (
@@ -45,6 +46,7 @@ function App() {
    <Route path="/profile" element={<Profile/>} />
    <Route path="/allusers" element={<Allusers/>} />
    <Route path="/addbooks" element={<Addbooks/>} />
+
    </Routes>
    
    </BrowserRouter>
