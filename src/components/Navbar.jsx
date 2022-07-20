@@ -13,10 +13,11 @@ export default function Navbar(props) {
         props.onSubmit(title)
     };
     const filterbygenreHandle = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         // console.log(e.target.value)
         setgenre(e.target.value)
-        props.onChange(genre)
+        props.onChange(e.target.value)
+        props.onSubmit(title)
     };
     // const genreHandle = (e) => {
     //     e.preventDefault();
@@ -66,6 +67,7 @@ export default function Navbar(props) {
                                         </form>
                                     </div>
                                     <select onChange={filterbygenreHandle}>
+                                        <option value=" ">All</option>
                                         <option value="news">News</option>
                                         <option value="business">Business</option>
                                         <option value="childrenbooks">Children books</option>
@@ -74,6 +76,14 @@ export default function Navbar(props) {
                                         <option value="literature">Literature</option>
                                         <option value="romance">Romance</option>
                                         <option value="fantacy">Fantacy</option>
+                                    </select>
+                                    <select>
+                                        <option value="colombo">colombo</option>
+                                        <option value="kandy">kandy</option>
+                                        <option value="kegalle">kegalle</option>
+                                        <option value="kurunagala">kurunagala</option>
+                                        <option value="anuradhapura">anuradhapura</option>
+                                        <option value="polonnaruwa">polonnaruwa</option>
                                     </select>
                                 </div>
                             </div>
