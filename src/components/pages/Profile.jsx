@@ -32,7 +32,7 @@ export default function Profile() {
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Title</div>
-                                <div class="px-4 py-2">Miss</div>
+                                <div class="px-4 py-2">Mr</div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Contact No.</div>
