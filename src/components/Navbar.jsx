@@ -5,11 +5,23 @@ import Allbookslist from './pages/Allbookslist';
 
 export default function Navbar(props) {
     const [title, settitle] = useState('');
+    const [genre, setgenre] = useState('');
+    // const [genre, setgenre] = useState('');
     var Jwt = localStorage.getItem("jwt")
     const searchHandle = (e) => {
         e.preventDefault();
         props.onSubmit(title)
     };
+    const filterbygenreHandle = (e) => {
+        e.preventDefault();
+        // console.log(e.target.value)
+        setgenre(e.target.value)
+        props.onChange(genre)
+    };
+    // const genreHandle = (e) => {
+    //     e.preventDefault();
+    //     props.onSubmit(genre)
+    // };
     // console.log(title)
     return (
         <div>
@@ -50,9 +62,19 @@ export default function Navbar(props) {
                                         </div>
                                         <form onSubmit={searchHandle}>
                                             <input type="text" value={title} class="w-full py-2 pl-10 pr-44 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-black-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Search" onChange={(e) => settitle(e.target.value)} />
-                                            <button type="Submit"class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white  rounded-r-lg border border-black-700  focus:ring-4 focus:outline-none focus:ring-black-300 bg-amber-400 hover:bg-slate-500 dark:focus:ring-black-800"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                                            <button type="Submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white  rounded-r-lg border border-black-700  focus:ring-4 focus:outline-none focus:ring-black-300 bg-amber-400 hover:bg-slate-500 dark:focus:ring-black-800"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
                                         </form>
                                     </div>
+                                    <select onChange={filterbygenreHandle}>
+                                        <option value="news">News</option>
+                                        <option value="business">Business</option>
+                                        <option value="childrenbooks">Children books</option>
+                                        <option value="cookbooks">Cookbooks</option>
+                                        <option value="history">History</option>
+                                        <option value="literature">Literature</option>
+                                        <option value="romance">Romance</option>
+                                        <option value="fantacy">Fantacy</option>
+                                    </select>
                                 </div>
                             </div>
 
