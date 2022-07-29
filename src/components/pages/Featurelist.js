@@ -4,8 +4,38 @@ import { Link } from 'react-router-dom';
 
 
 
-const Allbookslist = ({ booksList }) => {
-//   var jwt = localStorage.getItem("jwt")
+const Featurelist = ({ featureList }) => {
+    var jwt = localStorage.getItem("jwt")
+
+    axios({
+      method: "get",
+      url: "http://18.130.213.30:8080/books/featured/",
+      headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,PATCH,OPTIONS",
+          "Authorization": `Bearer ` + jwt
+      }, data: null,
+      // data: {
+      //     uFName: uFName,
+      //     uLName: uLName,
+      //     address: address,
+      //     userEmail: userEmail,
+      //     password: password,
+      //     userType: userType
+      // },
+      // withCredentials: true,
+      mode: "cors",
+  }).then((res) => {
+      console.log("response", res.data.body)
+      var users = res.data.body;
+      localStorage.setItem("Featurelist", JSON.stringify(users))
+      
+  }).catch((err=>{console.log ("error ; "+err.name)}))
+  // }
+  const usersObj = localStorage.getItem('Featurelist')
+  const Featurelist = JSON.parse(usersObj);
+  console.log(Featurelist)
+
   
   
 //   const Viewbook = (bookID) => {
@@ -68,7 +98,7 @@ const Allbookslist = ({ booksList }) => {
   return (
     <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-      {booksList.map(book => {
+      {Featurelist.map(book => {
         return (
 
           <div class="w-full max-w-xs text-center" >
@@ -90,4 +120,4 @@ const Allbookslist = ({ booksList }) => {
   );
 
 }
-export default Allbookslist;
+export default Featurelist;

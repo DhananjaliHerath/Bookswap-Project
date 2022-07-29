@@ -22,7 +22,7 @@ export default function Login() {
         }
 
     });
-    const notify = () => toast('Login Successfully!  ');
+    const notify = () => toast(' Login Successfull ');
 
     const navigate = useNavigate();
 
@@ -55,7 +55,8 @@ export default function Login() {
         } else {
           // console.log("type: invalid")
           navigate("/home")
-          // toast('Welcome !!!  ' + res.data.body.user.firstName)
+          toast('Login Successfull' + res.data.body.user.firstName
+          );
         }
   
       }).catch((err => {

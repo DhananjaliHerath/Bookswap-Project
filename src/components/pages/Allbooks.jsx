@@ -12,6 +12,7 @@ export default function Allbooks() {
   var Jwt = localStorage.getItem("jwt")
   const[titile, setTitile] = useState(null);
   const[genre, setGenre] = useState(null);
+  const[city, setCity] = useState(null);
   var param = '';
   var inputw = '';
   const getData = (data) =>{
@@ -20,7 +21,8 @@ export default function Allbooks() {
   }
   const getFilterGData = (data) =>{
     console.log("from G parent: " + data)
-    setGenre(data);
+    setGenre(data[0])
+    setCity(data[1])
   }
   // console.log('test titile' + titile)
   // console.log('test genre' + genre)

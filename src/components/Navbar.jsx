@@ -1,23 +1,33 @@
-import { useState, React } from "react"
+import { useState, React , useEffect  } from "react"
 import { FaShoppingBag } from "react-icons/fa"
 import { FaUserAlt } from "react-icons/fa"
 import Allbookslist from './pages/Allbookslist';
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
     const [title, settitle] = useState('');
     const [genre, setgenre] = useState('');
-    // const [genre, setgenre] = useState('');
+    const [city, setCity] = useState('');
     var Jwt = localStorage.getItem("jwt")
+    console.log('Genre selected: '+genre)
+    console.log('City selected: '+city)
     const searchHandle = (e) => {
         e.preventDefault();
-        props.onSubmit(title)
+       props.onSubmit(title)
     };
-    const filterbygenreHandle = (e) => {
-        e.preventDefault();
-        // console.log(e.target.value)
-        setgenre(e.target.value)
-        props.onChange(genre)
-    };
+    useEffect(() => {
+        
+        const adFilter = [genre,city] 
+        // props.onChange(adFilter);
+    }, genre);
+    // const filterbygenreHandle = (e) => {
+    //     // e.preventDefault();
+    //     // console.log(e.target.value)
+    //     setgenre(e.target.value)
+    //     props.onChange(e.target.value)
+    //     props.onSubmit(title)
+    // };
     // const genreHandle = (e) => {
     //     e.preventDefault();
     //     props.onSubmit(genre)
@@ -65,7 +75,8 @@ export default function Navbar(props) {
                                             <button type="Submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white  rounded-r-lg border border-black-700  focus:ring-4 focus:outline-none focus:ring-black-300 bg-amber-400 hover:bg-slate-500 dark:focus:ring-black-800"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
                                         </form>
                                     </div>
-                                    <select onChange={filterbygenreHandle}>
+                                    <select onChange={(e)=>setgenre(e.target.value)}>
+                                        <option value=" ">All</option>
                                         <option value="news">News</option>
                                         <option value="business">Business</option>
                                         <option value="childrenbooks">Children books</option>
@@ -95,8 +106,8 @@ export default function Navbar(props) {
 
 
                             <div class="flex items-center py-2 -mx-1 md:mx-0">
-
-                                <p className='border bg-amber-400 shadow-lg hover:shadow-xl px-6 py-2 mx-2 relative flex items-center  hover:bg-slate-500 text-black hover:text-white'><FaUserAlt className='mr-2' />Sign In</p>
+                            <Link to={"/newregister"}>
+                                <p className='border bg-amber-400 shadow-lg hover:shadow-xl px-6 py-2 mx-2 relative flex items-center  hover:bg-slate-500 text-black hover:text-white'><FaUserAlt className='mr-2' />Sign In</p></Link>
                                 <p className='border bg-amber-400 shadow-lg hover:shadow-xl px-7 py-2 mx-2 relative  flex items-center hover:bg-slate-500 text-black hover:text-white'><FaShoppingBag className='mr-2' />Shopping Cart</p>
 
 
@@ -131,7 +142,7 @@ export default function Navbar(props) {
                         <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:my-0" href="/allbooks">All Books</a>
                         <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:my-0" href="/Profile">Profile</a>
                         <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:my-0" href="/allusers">All Users</a>
-
+                        <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline md:my-0" href="/feature">Feature</a>
                     </div>
                 </div>
             </nav>

@@ -6,6 +6,7 @@ import RingLoader from "react-spinners/RingLoader";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
+import { useNavigate } from "react-router-dom";
 
 export default function Bookdatails1(bookID) {
   const {id}=useParams();
@@ -13,8 +14,9 @@ export default function Bookdatails1(bookID) {
   const [loading,setLoading]=useState(false);
   console.log("id: " +id)
   
-  // const Viewbook = (bookID) => {
+  const Viewbook = (bookID) => {
     // const UserID = props.userID
+
     console.log(bookID)
     axios({
         method: "get",
@@ -24,22 +26,22 @@ export default function Bookdatails1(bookID) {
             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
             "Authorization": `Bearer ` + jwt
         }, data: null,
-        // data: {
-        //     uFName: uFName,
-        //     uLName: uLName,
-        //     address: address,
-        //     userEmail: userEmail,
-        //     password: password,
-        //     userType: userType
-        // },
-        // withCredentials: true,
-        mode: "cors",
+//         // data: {
+//         //     uFName: uFName,
+//         //     uLName: uLName,
+//         //     address: address,
+//         //     userEmail: userEmail,
+//         //     password: password,
+//         //     userType: userType
+//         // },
+//         // withCredentials: true,
+//         mode: "cors",
     }).then((res) => {
         console.log("response", res)
         var singlebooks = res.data.body;
         localStorage.setItem("singlebooks", JSON.stringify(singlebooks))
     })
-// }
+}
     const SinglebooksObj = localStorage.getItem('Singlebooks')
     const SinglebooksList = JSON.parse(SinglebooksObj);
     console.log(SinglebooksList)
@@ -208,6 +210,10 @@ export default function Bookdatails1(bookID) {
 
                     </button>
                     <button class="bg-amber-400 w-32 py-3 mt-7 relative  items-center ml-4 hover:bg-slate-500 text-black hover:text-white">Add to Cart
+
+
+                    </button>
+                    <button class="bg-amber-400 w-32 py-3 mt-7 relative  items-center ml-4 hover:bg-slate-500 text-black hover:text-white">Featured
 
 
                     </button>

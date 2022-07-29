@@ -21,6 +21,10 @@ import Romance from "./components/views/Romance";
 import Fantacy from "./components/views/Fantacy";
 import Allusers from "./components/pages/Allusers";
 import ContactUs from "./components/ContactUs";
+import Feature from "./components/pages/Feature";
+import Addfeature from "./components/pages/Addfeature";
+
+
 
 
 
@@ -48,6 +52,8 @@ function App() {
    <Route path="/allusers" element={<Allusers/>} />
    <Route path="/addbooks" element={<Addbooks/>} />
    <Route path="/contact" element={<ContactUs/>} />
+   <Route path="/feature" element={<Feature/>} />
+   <Route path="/addfeature" element={<Addfeature/>} />
    </Routes>
    
    </BrowserRouter>
